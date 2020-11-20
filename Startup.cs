@@ -94,42 +94,6 @@ namespace MyGame
                 });
             }
 
-            /*// Login
-            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/login")),
-                b => b.Use(async (context, next) =>
-                {
-                    if (context.Request.Cookies["my_token"] != null)
-                    {
-                        await next.Invoke();
-                    }
-                    else
-                    {
-                        string errorMsg = "User not authenticated. Missing authentication token. Please go to login page.";
-
-                        // Token doesn't exist and user is not authenticated
-                        throw new UnauthorizedAccessException(errorMsg);
-                            
-                    }
-                }));
-
-            // API calls
-            app.UseWhen(context => context.Request.Path.StartsWithSegments(new PathString("/api")),
-                b => b.Use(async (context, next) =>
-                {
-                    if (context.Request.Cookies["my_token"] != null)
-                    {
-                        await next.Invoke();
-                    }
-                    else
-                    {
-                        string errorMsg = "User not authenticated. Missing authentication token. Please go to login page.";
-
-                        // Token doesn't exist and user is not authenticated
-                        throw new UnauthorizedAccessException(errorMsg);
-                            
-                    }
-                }));*/
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
